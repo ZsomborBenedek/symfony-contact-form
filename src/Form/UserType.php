@@ -16,13 +16,25 @@ class UserType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label' => 'Neved'
+                'label' => 'Neved',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Írj ide...',
+                ],
             ])
             ->add('email', EmailType::class, [
-                'label' => 'E-mail címed'
+                'label' => 'E-mail címed',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Írj ide...',
+                ],
             ])
             ->add('message', TextareaType::class, [
-                'label' => 'Üzenet szövege'
+                'label' => 'Üzenet szövege',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Írj ide...',
+                ],
             ]);
     }
 
