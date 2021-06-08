@@ -39,13 +39,27 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('user_index');
+            return $this->redirectToRoute('user_confirm');
+        } else if ($form->isSubmitted() && $form->isValid() == false) {
+            return $this->render('user/new.html.twig', [
+                'user' => $user,
+                'form' => $form->createView(),
+                'error' => 'Hiba! Kérjük töltsd ki az összes mezőt!',
+            ]);
         }
 
         return $this->render('user/new.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/confirmed", name="user_confirm", methods={"GET"})
+     */
+    public function confirm(): Response
+    {
+        return $this->render('user/confirm.html.twig');
     }
 
     /**

@@ -1,5 +1,13 @@
 {{ form_start(form) }}
 
+{% if error|default %}
+	<div class="form-group">
+		<span class="badge bg-danger">
+			{{ error }}
+		</span>
+	</div>
+{% endif %}
+
 <div class="form-group">
 	{{ form_label(form.name) }}
 	{{ form_widget(form.name, {'attr':{'class':'form-control'}}) }}
