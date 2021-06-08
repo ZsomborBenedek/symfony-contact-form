@@ -30,3 +30,11 @@ a {
 .form-group {
     padding-bottom: 0.8rem;
 }
+
+.success-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}

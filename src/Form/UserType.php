@@ -19,14 +19,14 @@ class UserType extends AbstractType
                 'label' => 'Neved',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Írj ide...',
+                    'placeholder' => 'Minimum 3 karakter...',
                 ],
             ])
             ->add('email', EmailType::class, [
                 'label' => 'E-mail címed',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Írj ide...',
+                    'placeholder' => 'cím@domain...',
                 ],
             ])
             ->add('message', TextareaType::class, [
