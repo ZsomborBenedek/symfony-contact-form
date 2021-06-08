@@ -29,7 +29,7 @@ class User
     /**
      * @ORM\Column(type="string", length=100)
      * @Assert\NotBlank
-     * @Assert\Length(min=6,max=100, minMessage="Email must be at least 6 characters!",maxMessage="Email must be at most 100 characters!")
+     * @Assert\Email(message = "The email '{{ value }}' is not a valid email.")
      */
     private $email;
 
